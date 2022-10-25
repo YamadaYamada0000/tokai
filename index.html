@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>点数入力</title>
+    </head>
+    <body>
+        <h2>テストの点数を入力してください</h2>
+        <form>
+            <label for="num">点数: </label>
+            <input type="text" id="num">
+            <input type="button" value="決定" onclick="handan(num.value)">
+            <p>あなたのランクは</p>
+            <br>
+            <img id="image_file"src=""/>
+        </form>
+    </body>
+
+    <script>
+        var img;
+        
+        function handan(point2){
+        if(point2 >= 95){
+            img = document.getElementById("image_file");
+            img.src = "img/S+.png";
+        }else if(point2 < 95 && point2 >= 90){
+            img = document.getElementById("image_file");
+            img.src = "img/S.png";
+        }else if(point2 < 90 && point2 >= 85){
+            img = document.getElementById("image_file");
+            img.src = "img/S-.png";
+        }else if(point2 < 85 && point2 >= 80){
+            img = document.getElementById("image_file");
+            img.src = "img/A+.png";
+        }else if(point2 < 80 && point2 >= 75){
+            img = document.getElementById("image_file");
+            img.src = "img/A.png";
+        }else if(point2 < 75 && point2 >= 70){
+            img = document.getElementById("image_file");
+            img.src = "img/A-.png";
+        }else if(point2 < 70 && point2 >= 65){
+            img = document.getElementById("image_file");
+            img.src = "img/B+.png";
+        }else if(point2 < 65 && point2 >= 60){
+            img = document.getElementById("image_file");
+            img.src = "img/B.png";
+        }else if(point2 < 60 && point2 >= 55){
+            img = document.getElementById("image_file");
+            img.src = "img/B-.png";
+        }else if(point2 < 55 && point2 >= 50){
+            img = document.getElementById("image_file");
+            img.src = "img/C+.png";
+        }else if(point2 < 50 && point2 >= 45){
+            img = document.getElementById("image_file");
+            img.src = "img/C.png";
+        }else if(point2 < 45 && point2 >= 40){
+            img = document.getElementById("image_file");
+            img.src = "img/C-.png";
+        }else if(point2 < 40 && point2 >= 35){
+            img = document.getElementById("image_file");
+            img.src = "img/D+.png";
+        }else if(point2 < 35 && point2 >= 30){
+            img = document.getElementById("image_file");
+            img.src = "img/D.png";
+        }else if(point2 < 30 && point2 >= 25){
+            img = document.getElementById("image_file");
+            img.src = "img/D-.png";
+        }else if(point2 < 25 && point2 >= 20){
+            img = document.getElementById("image_file");
+            img.src = "img/E+.png";
+        }else if(point2 < 20 && point2 >= 15){
+            img = document.getElementById("image_file");
+            img.src = "img/E.png";
+        }else if(point2 < 15 && point2 >= 0){
+            img = document.getElementById("image_file");
+            img.src = "img/E-.png";
+        }
+        
+    const txt = document.getElementById('num').value;
+      if (!txt) { return; }
+
+      // 文字列をBlob化
+      const blob = new Blob([txt], { type: 'text/plain' });
+
+      // ダウンロード用のaタグ生成
+      const a = document.createElement('a');
+      a.href =  URL.createObjectURL(blob);
+      a.download = 'test1.txt';
+      a.click();
+
+        }
+    </script>
+
+</html>
